@@ -5,12 +5,12 @@
     <format>tar</format>
   </formats>
   <includeBaseDirectory>false</includeBaseDirectory>
-  <baseDirectory>/</baseDirectory>
   <fileSets>
     <fileSet>
+      <directory>src/main/resources/tar</directory>
       <outputDirectory>/</outputDirectory>
       <includes>
-        <include>src/main/resources/tar/*</include>
+        <include>*</include>
       </includes>
     </fileSet>
   </fileSets>

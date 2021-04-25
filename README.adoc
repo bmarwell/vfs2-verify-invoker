@@ -1,0 +1,27 @@
+vfs2 in a verify.groovy script:
+
+[source,groovy]
+----
+  def fsManager = VFS.manager
+  def file = fsManager.resolveFile("gz:tar:${basedir}/target/dependencies/vfs-invoker-groovy-1.0.0-SNAPSHOT.tar!/hello.txt")
+----
+
+When run without commons-compress, the exception message is:
+
+[source,groovy]
+----
+org.apache.commons.vfs2.FileSystemException: Could not find file with URI "tar:/home/user/git/apache/vfs-invoker-groovy/target/it/vfs-it/target/dependency/vfs-invoker-groovy-1.0.0-SNAPSHOT.tar" because it is a relative path, and no base URI was provided.
+----
+
+run this command to get a build log:
+
+[source,bash]
+----
+mvn verify -Prun-its
+----
+
+to get the build output on the command line:
+[source,bash]
+----
+mvn verify -Prun-its -DstreamLogs=true
+----
